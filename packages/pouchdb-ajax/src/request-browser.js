@@ -215,7 +215,7 @@ function xhRequest(options, callback) {
         err.code = 'ETIMEDOUT';
       } else {
         try {
-          err = JSON.parse(xhr.response);
+          err = JSON.parse(xhr.response) || err;
         } catch(e) {}
       }
       err.status = xhr.status;
